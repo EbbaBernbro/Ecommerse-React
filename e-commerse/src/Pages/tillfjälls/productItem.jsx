@@ -18,7 +18,8 @@ export const ProductItem = (props) => {
       </div>
       <button className="addToCart" onClick={() => addToCart(id)}>
         {/* If the amount of this (id) specific id is greater than 0 then we want to display the amount*/}
-        Köp
+        {/* && conditional rendering?? */}
+        Köp {amountOfProductsInCart > 0 && <> ({amountOfProductsInCart}) </>}
       </button>
     </div>
   );
