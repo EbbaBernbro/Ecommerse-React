@@ -11,16 +11,21 @@ export const ProductItem = (props) => {
 
   return (
     <div className="productCard">
-      <img alt="" src={image} />
-      <div className="productInfo">
-        <p>{name}</p>
-        <p>{price} kr</p>
+      <div className="pt1">
+        <img alt="" src={image} />
       </div>
-      <button className="addToCart" onClick={() => addToCart(id)}>
-        {/* If the amount of this (id) specific id is greater than 0 then we want to display the amount*/}
-        {/* && conditional rendering?? */}
-        Köp {amountOfProductsInCart > 0 && <> ({amountOfProductsInCart}) </>}
-      </button>
+      <div className="pt2">
+        <div className="productInfo">
+          <span>{name}</span>
+          <span>{price} kr</span>
+        </div>
+        <button className="addToCart" onClick={() => addToCart(id)}>
+          {/* If the amount of this (id) specific id is greater than 0 then we want to display the amount*/}
+          {/* && conditional rendering?? */}
+          Lägg till
+          {amountOfProductsInCart > 0 && <> ({amountOfProductsInCart}) </>}
+        </button>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ export const Navbar = () => {
   return (
     <div className="navbar">
       <div className="links">
-        <Link to="/"> tillFJÄLLS </Link>
+        <Link to="/"> Butiken </Link>
         <Link to="/cart"> 🛒 </Link>
       </div>
     </div>

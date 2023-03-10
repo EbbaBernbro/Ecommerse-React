@@ -1,0 +1,100 @@
+.productCardCart {
+  height: 200px;
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.flexContainerCart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flexItem1Cart {
+  order: 1;
+  flex-grow: 3;
+  flex: 0 0 200px;
+  align-self: flex-start;
+  height: 160px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.flexItem1Cart img {
+  height: 150px;
+  width: 150px;
+  padding-left: 25px;
+  object-fit: contain;
+}
+
+.flexItem2Cart {
+  order: 2;
+  flex-grow: 7;
+  margin-left: 10px;
+  align-self: flex-start;
+}
+
+.gridContainer {
+  background-color: rgba(252, 252, 252, 0.422);
+  border-radius: 15px;
+  padding-left: 30px;
+  height: 180px;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+
+.spantags span {
+  display: block;
+  padding-bottom: 10px;
+  font-weight: 600;
+  padding-top: 5px;
+}
+
+.gridItem2 {
+  align-self: flex-start;
+  text-align: end;
+}
+
+.gridItem2 button {
+  border-color: transparent;
+  background-color: transparent;
+  padding-right: 30px;
+}
+
+.gridItem2 button:hover {
+  cursor: pointer;
+}
+
+.gridItem3 {
+  margin-top: 0px;
+}
+
+.gridItem3 button {
+  background-color: black;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  border-color: black;
+}
+
+.gridItem3 button:hover {
+  background-color: rgb(255, 209, 110);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.totalPrice {
+  margin-left: 40px;
+  font-size: 20px;
+}
+
+.totalPrice span {
+  font-size: small;
+  font-weight: 400;
+  font-style: italic;
+}

@@ -7,16 +7,21 @@ export const CartProduct = (props) => {
     useContext(TheShopContext);
 
   return (
-    <div className="productCard">
-      <img alt="" src={image} />
-      <div className="productInfo">
-        <p>{name}</p>
-        <p>{price} kr</p>
-        <div className="amountOfProductsHandler">
+    <div className="productCardCart flexContainerCart">
+      <div className="flexItem1Cart">
+        <img alt="" src={image} />
+      </div>
+      <div className="productInfoCart flexItem2Cart gridContainer">
+        <div className="gridItem1 spantags">
+          <span>{name}</span>
+          <span>Pris per produkt: {price} kr</span>
+        </div>
+        <div className="gridItem2">
           <button onClick={() => removeFromCart(id)}> 🗑️ </button>
-          {/* <input value={cartProducts[id]} /> */}
-          <div>{cartProducts[id]}</div>
-          <button onClick={() => addToCart(id)}> + </button>
+        </div>
+        <div className="gridItem3">
+          <div>Antal tillagda produkter: {cartProducts[id]}</div>
+          <button onClick={() => addToCart(id)}> Lägg till fler </button>
         </div>
       </div>
     </div>

@@ -5,6 +5,8 @@ import { TheShop } from "./Pages/tillfjälls/theShop";
 import { Cart } from "./Pages/cart/cart";
 import { TheShopContextProvider } from "./context/theShopContext";
 
+import "./App.css";
+
 function App() {
   return (
     <div className="App">

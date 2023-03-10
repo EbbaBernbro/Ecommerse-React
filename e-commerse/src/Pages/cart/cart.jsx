@@ -5,9 +5,9 @@ import { CartProduct } from "./cartProduct";
 import "./cart.css";
 
 export const Cart = () => {
-  const { cartProducts } = useContext(TheShopContext);
+  const { cartProducts, getTotalPrice } = useContext(TheShopContext);
   //getTotalPrice
-  //const totalPrice = getTotalPrice();
+  const totalPrice = getTotalPrice();
 
   return (
     <div className="cart">
@@ -25,8 +25,7 @@ export const Cart = () => {
       </div>
       <div>
         <h4 className="totalPrice">
-          Totalpris <span>inkl. moms</span> kr
-          {/* {totalPrice} */}
+          Totalpris <span>inkl. moms</span> {totalPrice} kr
         </h4>
       </div>
     </div>
