@@ -30,7 +30,6 @@ export const TheShopContextProvider = (props) => {
           //Find is a function in JavaScript where I can a specific element in an array where some part of it satisfy a condition
           (thisProduct) => thisProduct.id === Number(product)
         );
-        console.log(PRODUCTLIST);
         //cartProducts[product] is the amount of the specific product in the cart
         totalPrice += cartProducts[product] * productInfo.price;
       }

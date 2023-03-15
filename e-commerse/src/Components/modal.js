@@ -1,7 +1,7 @@
 import React from "react";
 import "./modal.css";
 
-//exitModal is a prop
+//exitModal and productInfo are functions received as props
 function Modal({ exitModal, productInfo }) {
   return (
     <div className="behindModal">

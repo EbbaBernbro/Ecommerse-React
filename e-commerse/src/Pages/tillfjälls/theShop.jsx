@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import { PRODUCTLIST } from "../../productList";
-import { LOGO } from "../../productList";
 import { ProductItem } from "./productItem";
 import Modal from "../../Components/modal";
+import logo from "../../images/logo.png";
 
 import "./theShop.css";
 
 export const TheShop = () => {
-  //test nedan
   const [searchTerm, setSearchTerm] = useState("");
+  // const [openModal, setOpenModal] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  //Stoppa in hela produkten objektet
+
+  const handleModalClick = (productId) => {
+    setSelectedProduct(productId);
+    setOpenModal(true);
+  };
 
   return (
     <div className="theShop">
-      <div className="title">
-        <h2> tillFJÄLLS </h2>
+      <div className="logo">
+        <img alt="" src={logo}></img>
       </div>
-      {/* <div className="logo">
-        <img src={} alt="" />
-      </div> */}
 
       {/* SEARCH SPECIFIC PRODUCT, !!! NOTE TO MYSELF: FÖRBÄTTRINGSOMRÅDE !!! */}
       <div className="searchTemplate">
@@ -54,23 +58,27 @@ export const TheShop = () => {
                     <div className="flexItem1">
                       <img src={product.image} alt="" />
                     </div>
+
                     <div className="flexItem3">
                       <button
                         className="openModal"
                         onClick={() => {
-                          setOpenModal(true);
+                          //- 1 Because the array starts from 0 but products from 1 so it selected the next product before
+                          handleModalClick(product.id - 1);
                         }}
                       >
                         Mer information om produkten
                       </button>
                     </div>
+                    {/* HERE WAS THE MODAL COMPONENT */}
                     {/* If openModal is equal to true, render the Modal component */}
-                    {openModal && (
+                    {/* {openModal && (
                       <Modal
                         exitModal={setOpenModal}
                         productInfo={product.info}
                       />
-                    )}
+                    )} */}
+                    {/* HERE WAS THE MODAL COMPONENT */}
                     <div className="flexItem2">
                       <span>{product.name}</span>
                       <span>{product.price} kr</span>
@@ -82,6 +90,21 @@ export const TheShop = () => {
           })}
         </div>
       </div>
+
+      {/* MODAL COMP */}
+
+      {/* If openModal is equal to true, render the Modal component */}
+      {openModal && (
+        <Modal
+          exitModal={setOpenModal}
+          productInfo={PRODUCTLIST[selectedProduct].info}
+        />
+      )}
+
+      {/* MODAL COMP */}
+
+      {/* /////// */}
+
       {/* CODE ABOVE = SEARCH SPECIFIC PRODUCT, !!! NOTE TO MYSELF: FÖRBÄTTRINGSOMRÅDE !!! */}
 
       {/* Loop through every element in the products array because we want to display them/render each product */}

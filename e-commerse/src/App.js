@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <TheShopContextProvider>
         <Router>
-          {/* NAVBAR, the reason it's placed here is for it to be available in every route/path/page */}
+          {/* Navbar is placed here so that it will be available in every route (path/page) */}
           <Navbar />
           <Routes>
             {/* MAINPAGE */}
