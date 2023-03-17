@@ -8,10 +8,9 @@ import "./theShop.css";
 
 export const TheShop = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  // const [openModal, setOpenModal] = useState(false);
+
   const [openModal, setOpenModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  //Stoppa in hela produkten objektet
 
   const handleModalClick = (productId) => {
     setSelectedProduct(productId);
@@ -36,7 +35,7 @@ export const TheShop = () => {
             }}
           />
         </div>
-        <div className="unKnownYet">
+        <div className="">
           {PRODUCTLIST.filter((product) => {
             //If input is empty return no products
             if (searchTerm === "") {
@@ -70,15 +69,6 @@ export const TheShop = () => {
                         Mer information om produkten
                       </button>
                     </div>
-                    {/* HERE WAS THE MODAL COMPONENT */}
-                    {/* If openModal is equal to true, render the Modal component */}
-                    {/* {openModal && (
-                      <Modal
-                        exitModal={setOpenModal}
-                        productInfo={product.info}
-                      />
-                    )} */}
-                    {/* HERE WAS THE MODAL COMPONENT */}
                     <div className="flexItem2">
                       <span>{product.name}</span>
                       <span>{product.price} kr</span>
@@ -90,8 +80,7 @@ export const TheShop = () => {
           })}
         </div>
       </div>
-
-      {/* MODAL COMP */}
+      {/* CODE ABOVE = SEARCH SPECIFIC PRODUCT, !!! NOTE TO MYSELF: FÖRBÄTTRINGSOMRÅDE !!! */}
 
       {/* If openModal is equal to true, render the Modal component */}
       {openModal && (
@@ -101,20 +90,13 @@ export const TheShop = () => {
         />
       )}
 
-      {/* MODAL COMP */}
-
-      {/* /////// */}
-
-      {/* CODE ABOVE = SEARCH SPECIFIC PRODUCT, !!! NOTE TO MYSELF: FÖRBÄTTRINGSOMRÅDE !!! */}
-
       {/* Loop through every element in the products array because we want to display them/render each product */}
       {/* Therefor I use map and grab the data that comes with them, data = id, name, price, image etc. */}
       {/* We return a component called product */}
       <div className="products">
         {PRODUCTLIST.map((productData, index) => (
-          //productDatapass, the data from each specific product
+          //productData pass the data from each specific product
           //data is a prop that will be all the data being passed
-          //
           <ProductItem key={index} data={productData} />
         ))}
       </div>

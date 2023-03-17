@@ -6,7 +6,6 @@ import "./cart.css";
 
 export const Cart = () => {
   const { cartProducts, getTotalPrice } = useContext(TheShopContext);
-  //getTotalPrice
   const totalPrice = getTotalPrice();
 
   return (

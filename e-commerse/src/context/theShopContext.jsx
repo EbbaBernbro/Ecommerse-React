@@ -25,9 +25,11 @@ export const TheShopContextProvider = (props) => {
     //Loop through every item n the cartProducts object to see if there is a value greater than 0, meaning if there is any products in the cart. If there is, grab that value(the amount of them) and multiply times the price of that product and add to the total price
     //Loop through an object:
     for (const product in cartProducts) {
+      //If the value is greater than 0
       if (cartProducts[product] > 0) {
         let productInfo = PRODUCTLIST.find(
           //Find is a function in JavaScript where I can a specific element in an array where some part of it satisfy a condition
+          //- in this case, in my productsarray find the specific product with the ID thisPtoduct.Id is equal to the product (convert it into a number)
           (thisProduct) => thisProduct.id === Number(product)
         );
         //cartProducts[product] is the amount of the specific product in the cart
@@ -52,7 +54,7 @@ export const TheShopContextProvider = (props) => {
     }));
   };
 
-  // The reason I create a whole component for this is I wanna keep track of all data and orgonize the logic
+  //The reason I create a whole component for this is I wanna keep track of all data and orgonize the logic
   //What this component does is defines all the states for my app, define all functions that will be used and then pass it to the provider
 
   //Value rqeure an object containing all the different states and functions I wanna pass to my provider
